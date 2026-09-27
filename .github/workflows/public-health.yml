@@ -1,0 +1,43 @@
+name: Public Production Health
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required production docs
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in README.md docs/PRODUCTION.md docs/CONTENT_BRIEF.md docs/ASSET_MANIFEST.md docs/RND_TO_PRODUCTION.md docs/FREE_PRODUCTION_STACK.md; do
+            test -s "$f" || { echo "Missing or empty: $f"; exit 1; }
+          done
+
+      - name: Check for private material
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find . -type f \( -name ".env" -o -name "*.pem" -o -name "*.key" \) -not -path "./.git/*" | grep -q .; then
+            echo "Potential private/secret material found."
+            exit 1
+          fi
+
+      - name: Check obvious oversized media
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find . -type f \( -iname "*.mp4" -o -iname "*.mov" -o -iname "*.wav" -o -iname "*.mkv" \) -size +50M -not -path "./.git/*" | grep -q .; then
+            echo "Large media detected. Keep large production media in approved media storage, not this Git repository."
+            exit 1
+          fi
