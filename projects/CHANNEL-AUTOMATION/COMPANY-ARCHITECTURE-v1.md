@@ -64,3 +64,60 @@ An agent must not modify its own permissions or bypass approval gates.
 NORMAL → DEGRADED → MANAGER_FAILOVER → MAINTENANCE → ROLLBACK → RECOVERY → NORMAL.
 
 The goal is service continuity, not autonomous control.
+
+
+## Operating company model v1.1
+
+The company is organized as four coordinated layers:
+
+### 1. Intelligence — "Topic Scouts"
+A dedicated Topic Intelligence function continuously finds genuinely new episode opportunities. It does not merely generate titles. It:
+- monitors authoritative guidance, research, professional sources, audience questions, practical accessibility problems, and emerging technology;
+- turns discoveries into normalized topic candidates;
+- checks every candidate against the episode history and Topic Diversity Gate;
+- records why the topic matters, what is known, what is uncertain, and what evidence is needed;
+- sends only differentiated candidates to Research & Verification.
+
+The Topic Scout cannot declare a topic verified or publish it.
+
+### 2. Editorial & Writing — "Story Studio"
+The Story Studio converts verified topics into original educational stories:
+- editorial lead selects the story angle;
+- scriptwriter drafts the script;
+- story editor checks narrative clarity and originality;
+- evidence editor ensures every factual claim remains inside the verification package;
+- storyboard/visual direction converts the script into production instructions.
+
+The Studio cannot weaken evidence boundaries to make a story more dramatic.
+
+### 3. Production & Distribution — "Production House"
+The Production House owns:
+- original visual assets;
+- character/visual direction;
+- voice and audio;
+- animation/editing;
+- captions and accessibility packaging;
+- thumbnail and metadata;
+- technical QA and final export;
+- publishing package and platform handoff;
+- publication record.
+
+Publishing is only allowed after PUBLISH_READY and all required gates.
+
+### 4. Executive Brain — "General Manager / Editorial Intelligence"
+The General Manager is the coordinating decision layer. It:
+- maintains the company mission and priorities;
+- balances topic novelty, evidence quality, audience usefulness, production cost, accessibility, rights, and schedule;
+- decides which verified candidates enter production;
+- resolves department conflicts;
+- monitors pipeline health;
+- delegates execution to departments;
+- cannot override safety, rights, accessibility, verification, or publishing gates.
+
+Mahmoud remains Deputy Manager/failover decision lead. The Executive Watchdog monitors the manager. Maintenance/Self-Repair remains constrained to diagnosis, proposal, isolated testing, verification, and rollback.
+
+### Separation of duties
+No single worker/agent should both invent a sensitive factual claim and independently approve that claim for publication. Topic discovery, verification, editorial production, QA, and publishing remain separately gated.
+
+### Company objective
+The system is not a "video generator." It is a managed content company with a research desk, writing room, production house, distribution desk, analytics loop, and executive control layer.
