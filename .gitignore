@@ -1,0 +1,17 @@
+# Generated/editing caches
+.cache/
+.tmp/
+dist/
+build/
+renders/
+proxies/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+*.psd
+*.blend
+*.aep
+*.prproj
+*.drp
