@@ -1,0 +1,61 @@
+version: 1
+registry_id: source-registry-v1
+purpose: machine-readable source policy for topic discovery and evidence collection.
+source_tiers:
+  tier_1:
+    name: authoritative
+    use: discovery_and_verification
+    examples:
+      - government_and_public_institutions
+      - official_guidance
+      - official_statistics
+  tier_2:
+    name: primary_research
+    use: verification
+    examples:
+      - systematic_reviews
+      - meta_analyses
+      - peer_reviewed_studies
+  tier_3:
+    name: professional_academic
+    use: discovery_and_supporting_verification
+    examples:
+      - professional_organizations
+      - academic_institutions
+      - reputable_academic_databases
+  tier_4:
+    name: secondary
+    use: discovery_only_unless_independently_verified
+    examples:
+      - reputable_news
+      - specialist_explainers
+      - community_discussion
+source_rules:
+  sensitive_topics:
+    minimum_verification_tier: tier_1
+    preferred_supporting_tiers: [tier_2, tier_3]
+    secondary_only: false
+  ordinary_topics:
+    discovery_allowed: [tier_1, tier_2, tier_3, tier_4]
+    verification_preferred: [tier_1, tier_2, tier_3]
+  prohibited_as_sole_evidence:
+    - anonymous_posts
+    - unsourced_social_posts
+    - scraped_content_without_provenance
+    - commercial_marketing_claims
+source_record_required:
+  - source_id
+  - title
+  - publisher
+  - url
+  - tier
+  - accessed_at
+  - publication_date
+  - status
+  - notes
+status_values:
+  - discovered
+  - screened
+  - verified
+  - rejected
+  - stale
