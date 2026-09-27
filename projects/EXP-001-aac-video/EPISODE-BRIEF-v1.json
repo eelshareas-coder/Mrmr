@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "episode_id": "EXP-001",
+  "working_title": "هل AAC يعني جهاز؟ الحقيقة أبسط من كده",
+  "core_question": "هل AAC يعني جهاز أو تطبيقًا واحدًا؟",
+  "audience": [
+    "Families",
+    "educators",
+    "people interested in accessible communication"
+  ],
+  "category": "AAC",
+  "verification_package_id": "VP-EXP001-AAC-v1",
+  "evidence_card_ref": "projects/EXP-001-aac-video/VERIFICATION-PACKAGE-v1.json#evidence_card",
+  "primary_sources": [
+    "S1",
+    "S2"
+  ],
+  "secondary_sources": [],
+  "key_claims": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "uncertainty_and_boundaries": [
+    "لا يثبت هذا المحتوى فعالية علاجية عامة أو أن AAC يزيد الكلام لدى كل شخص.",
+    "لا يقدم اختيارًا فرديًا لنظام AAC.",
+    "لا يساوي بين أنواع AAC المختلفة في الفعالية."
+  ],
+  "misconception_or_problem": "اختزال AAC في جهاز أو تطبيق.",
+  "selected_story_mode": "myth/fact",
+  "visual_metaphor": "صندوق واحد يتفتح ليكشف أدوات وطرق تواصل متعددة.",
+  "protagonist_action": "Noor تبدأ بسؤال عن الجهاز، ثم تختبر بصريًا عدة طرق للتواصل وتعيد صياغة فهمها لـ AAC.",
+  "team_roles": {
+    "general_manager": "approval gate",
+    "research": "claim/source integrity",
+    "story": "narrative/originality",
+    "production": "assets/voice/edit",
+    "qa": "content/story/rights/accessibility/technical"
+  },
+  "educational_takeaway": "AAC هو مجموعة من طرق ووسائل دعم التواصل، وليس جهازًا واحدًا؛ ويمكن أن يتعايش مع الكلام.",
+  "accessibility_plan": {
+    "captions": "full synchronized captions",
+    "on_screen_text": "short readable phrases",
+    "visual_information": "every essential visual concept is labeled or represented in audio/captions",
+    "color_dependency": false,
+    "pacing": "allow each communication mode to remain visible long enough to identify"
+  },
+  "rights_plan": {
+    "visual_assets": "original project-created graphics only",
+    "music": "none unless separately rights-verified",
+    "screenshots": "prohibited unless rights verified",
+    "voice": "original recording"
+  },
+  "monetization_safety_check": {
+    "repetitive_content_risk": "controlled by materially distinct episode question/story/evidence",
+    "misleading_claims": false,
+    "engagement_manipulation": false
+  },
+  "metadata_intent": {
+    "title": "هل AAC يعني جهاز؟ الحقيقة أبسط من كده",
+    "description_scope": "educational definition and boundaries only"
+  },
+  "originality_check": {
+    "status": "PASS_PENDING_FINAL_COMPARISON",
+    "rationale": "Episode uses a distinct myth/fact question and visual metaphor; final comparison against recent published episodes remains required."
+  },
+  "approval_state": "EXECUTIVE_REVIEW"
+}
