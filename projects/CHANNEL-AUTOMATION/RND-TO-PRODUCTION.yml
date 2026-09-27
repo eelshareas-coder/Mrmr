@@ -1,0 +1,42 @@
+version: 1
+pipeline: rnd-to-production
+states:
+  - DISCOVERED
+  - RESEARCHING
+  - VERIFIED
+  - EXECUTIVE_REVIEW
+  - APPROVED
+  - SCRIPTING
+  - STORYBOARDING
+  - PRODUCING
+  - QA
+  - PUBLISH_READY
+  - PUBLISHED
+  - MEASURING
+  - LEARNING
+gates:
+  VERIFIED:
+    required:
+      - evidence_card
+      - source_ledger
+      - claim_ledger
+      - uncertainty_notes
+  APPROVED:
+    required:
+      - episode_brief
+      - originality_check
+      - safety_check
+  PUBLISH_READY:
+    required:
+      - final_video
+      - captions
+      - rights_provenance
+      - qa_pass
+      - metadata
+      - thumbnail
+  PUBLISHED:
+    required:
+      - external_publication_record
+on_failure:
+  action: BLOCK_AND_ESCALATE
+  owner: Mahmoud
