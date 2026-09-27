@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "status": "seed",
+  "taxonomy": [
+    "disability",
+    "accessibility",
+    "inclusion",
+    "communication",
+    "AAC",
+    "assistive_technology",
+    "education",
+    "family_support",
+    "social_inclusion",
+    "mental_wellbeing",
+    "social_wellbeing",
+    "rights_awareness",
+    "daily_life",
+    "employment",
+    "community"
+  ],
+  "episode_candidates": [],
+  "approved_topics": [],
+  "rejected_topics": [],
+  "published_topics": []
+}
