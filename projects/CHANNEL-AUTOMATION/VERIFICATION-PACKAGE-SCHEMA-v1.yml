@@ -1,0 +1,116 @@
+version: 1
+kind: verification_package
+
+required:
+  - verification_package_id
+  - topic_id
+  - evidence_card
+  - claim_ledger
+  - source_ledger
+  - uncertainty_notes
+  - audience_framing
+  - red_flag_review
+  - verification_decision
+
+verification_decisions:
+  - VERIFIED
+  - HOLD
+  - RESEARCH_MORE
+  - REJECTED
+
+claim_types:
+  - FACT
+  - INTERPRETATION
+  - UNCERTAINTY
+  - OPINION
+
+claim_support_status:
+  - SUPPORTED
+  - PARTIAL
+  - CONTESTED
+  - UNSUPPORTED
+
+evidence_strength:
+  - strong
+  - moderate
+  - limited
+  - mixed
+  - insufficient
+
+source_status:
+  - screened
+  - verified
+  - rejected
+  - stale
+
+source_tiers:
+  - tier_1
+  - tier_2
+  - tier_3
+  - tier_4
+
+verification_rules:
+  all_required_sections: true
+  every_production_claim_must_map_to_source: true
+  unsupported_production_claims_block_verified: true
+  uncertainty_notes_required: true
+  red_flag_review_required: true
+  episode_brief_must_reference_package: true
+  sensitive_topics_must_follow_source_registry: true
+
+fields:
+  verification_package_id:
+    type: string
+    pattern: "^VP-[A-Z0-9-]+-v[0-9]+$"
+  topic_id:
+    type: string
+    pattern: "^TOPIC-[A-Z0-9-]+$"
+  evidence_card:
+    required:
+      - topic_id
+      - verification_package_id
+      - question
+      - scope
+      - audience
+      - summary
+      - evidence_strength
+      - evidence_as_of
+      - sensitivity_level
+  claim_ledger:
+    type: list
+    item_required:
+      - claim_id
+      - claim_text
+      - claim_type
+      - source_ids
+      - support_status
+      - scope_or_population
+      - time_boundary
+      - wording_limit
+  source_ledger:
+    type: list
+    item_required:
+      - source_id
+      - title
+      - publisher
+      - url
+      - tier
+      - accessed_at
+      - status
+      - supports_claim_ids
+  uncertainty_notes:
+    type: list
+  audience_framing:
+    required:
+      - recommended_framing
+      - prohibited_inference
+  red_flag_review:
+    required:
+      - completed
+      - flags
+  verification_decision:
+    required:
+      - decision
+      - checked_at
+      - checker
+      - rationale
