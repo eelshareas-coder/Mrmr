@@ -24,6 +24,8 @@ jobs:
           test -f projects/CHANNEL-AUTOMATION/OPERATING-CONTRACT-v1.md
           test -f projects/CHANNEL-AUTOMATION/STATE-MACHINE.md
           test -f projects/CHANNEL-AUTOMATION/MAINTENANCE-PLAYBOOK-v1.md
+          test -f projects/CHANNEL-AUTOMATION/SOURCE-REGISTRY-v1.yml
+          test -f projects/CHANNEL-AUTOMATION/TOPIC-DISCOVERY-ADAPTERS-v1.md
 
       - name: Validate episode production contracts
         shell: bash
