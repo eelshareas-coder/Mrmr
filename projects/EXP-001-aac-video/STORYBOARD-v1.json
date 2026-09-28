@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "episode_id": "EXP-001",
+  "episode_brief": "EPISODE-BRIEF-v1.json",
+  "storyboard_status": "READY_FOR_ASSET_BUILD",
+  "shots": [
+    {
+      "id": "S01",
+      "time": "0:00-0:08",
+      "purpose": "Hook",
+      "visual": "Noor sees a single generic communication-device icon inside a question frame; frame expands and the icon label reads AAC?",
+      "dialogue": "لما نقول AAC، هل لازم نقصد جهاز أو تطبيق؟ لا. AAC أوسع بكتير من كده.",
+      "onscreen": "AAC ≠ جهاز واحد",
+      "accessibility": "full captions; spoken line repeated as caption; high legibility"
+    },
+    {
+      "id": "S02",
+      "time": "0:08-0:15",
+      "purpose": "Reveal first modes",
+      "visual": "The device icon moves aside; original icons appear one by one for gesture, picture, and communication board.",
+      "dialogue": "AAC ممكن يشمل إشارة أو حركة، صور، ولوحة تواصل.",
+      "onscreen": "إشارة • صور • لوحة",
+      "accessibility": "each icon labeled; no color-only meaning"
+    },
+    {
+      "id": "S03",
+      "time": "0:15-0:25",
+      "purpose": "Expand definition",
+      "visual": "Writing card and speech-generating device join the same visual family; Noor points to the collection rather than one object.",
+      "dialogue": "وممكن يشمل الكتابة أو جهاز بيُخرج الكلام. وممكن الشخص يستخدم أكثر من طريقة حسب الموقف.",
+      "onscreen": "أكثر من طريقة",
+      "accessibility": "labels persist long enough to read"
+    },
+    {
+      "id": "S04",
+      "time": "0:25-0:43",
+      "purpose": "Coexistence with speech",
+      "visual": "Noor speaks while a separate AAC support card appears beside the speech bubble; both remain visible without implying one replaces the other.",
+      "dialogue": "وجود بعض الكلام لا يعني إن AAC مش مناسب. AAC ممكن يكمّل الكلام الموجود، أو يكون وسيلة بديلة لما الكلام وحده ما يكونش كافيًا للتواصل.",
+      "onscreen": "AAC ممكن يكمّل الكلام",
+      "accessibility": "two channels visually distinct and verbally described"
+    },
+    {
+      "id": "S05",
+      "time": "0:43-1:02",
+      "purpose": "Individualization",
+      "visual": "Four labeled context cards orbit Noor: الاحتياجات، الوصول، البيئة، الأشخاص اللي بنتواصل معاهم. Cards rearrange rather than rank.",
+      "dialogue": "مفيش نظام واحد مناسب للجميع. اختيار وسيلة التواصل يعتمد على احتياجات الشخص، وطريقة الوصول، والبيئة، واللغة، والأشخاص اللي بيتواصل معاهم.",
+      "onscreen": "الاختيار فردي وسياقي",
+      "accessibility": "no diagnostic or treatment recommendation"
+    },
+    {
+      "id": "S06",
+      "time": "1:02-1:15",
+      "purpose": "Evidence boundary",
+      "visual": "A research-card motif appears with a boundary line between evidence and promise; promise side stays empty.",
+      "dialogue": "الأدلة هنا مناسبة لفهم AAC ومبادئ عامة، لكن ما ينفعش نحول دراسة واحدة لوعد عام.",
+      "onscreen": "الدليل ≠ وعد",
+      "accessibility": "plain-language caption; avoid implying efficacy beyond verified claims"
+    },
+    {
+      "id": "S07",
+      "time": "1:15-1:25",
+      "purpose": "Recap",
+      "visual": "Three cards stack: ليس جهازًا واحدًا / ممكن يكمّل الكلام / الاختيار سياقي.",
+      "dialogue": "الفكرة الأولى اللي نحتفظ بيها: AAC مش جهاز واحد؛ هو مجموعة من الطرق لدعم التواصل.",
+      "onscreen": "3 أفكار",
+      "accessibility": "one idea per card"
+    },
+    {
+      "id": "S08",
+      "time": "1:25-1:30",
+      "purpose": "Scope",
+      "visual": "Clean end card with educational-scope statement.",
+      "dialogue": "المحتوى ده تعليمي عام، واختيار نظام AAC لشخص بعينه يحتاج تقييمًا مناسبًا عند الحاجة.",
+      "onscreen": "تعليمي عام — ليس تقييمًا فرديًا",
+      "accessibility": "readable disclaimer; minimum 3 seconds"
+    }
+  ],
+  "asset_constraints": [
+    "All graphics original/project-created.",
+    "No real children/families.",
+    "No copyrighted app/device screenshots.",
+    "No unverified music.",
+    "Every essential visual meaning also exists in audio/captions."
+  ],
+  "qa_hooks": [
+    "C1-C3 claim mapping retained in verification package.",
+    "No claim about guaranteed outcomes.",
+    "No diagnosis or individualized treatment.",
+    "Rights provenance required for every final asset."
+  ]
+}

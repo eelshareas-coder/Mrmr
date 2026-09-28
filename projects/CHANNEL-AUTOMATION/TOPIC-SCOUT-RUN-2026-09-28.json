@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "scout_run_id": "SCOUT-RUN-2026-09-28-01",
+  "status": "DISCOVERY_WITH_INITIAL_SOURCE_MATCHES",
+  "accessed_date": "2026-09-28",
+  "rule": "Sources below are discovery leads only. They are not yet a claim-level verification package; no candidate is approved for scripting.",
+  "source_records": [
+    {
+      "source_id": "SRC-TQ002-01",
+      "candidate_id": "TQ-002",
+      "title": "Image Description of Visual Information in Making Audio and Video Media Accessible",
+      "publisher": "W3C Web Accessibility Initiative",
+      "url": "https://www.w3.org/WAI/media/av/description/",
+      "tier": "tier_1",
+      "status": "discovered",
+      "supports": "Need for description of visual information for people who cannot see video adequately; relevant to audio description, not a complete captions standard.",
+      "limits": "Need separate authoritative captions guidance before framing any full video-accessibility checklist."
+    },
+    {
+      "source_id": "SRC-TQ003-01",
+      "candidate_id": "TQ-003",
+      "title": "CAST UDL Guidelines",
+      "publisher": "CAST",
+      "url": "https://udlguidelines.cast.org/",
+      "tier": "tier_3",
+      "status": "discovered",
+      "supports": "Multiple means of engagement, representation, action and expression; options for perception, language, interaction and communication.",
+      "limits": "Framework guidance, not proof that one specific classroom intervention works for every learner."
+    },
+    {
+      "source_id": "SRC-TQ003-02",
+      "candidate_id": "TQ-003",
+      "title": "Action & Expression | CAST UDL Guidelines",
+      "publisher": "CAST",
+      "url": "https://udlguidelines.cast.org/action-expression/",
+      "tier": "tier_3",
+      "status": "discovered",
+      "supports": "Learners differ in how they navigate learning and express what they know; options are important.",
+      "limits": "Use as design framework, not individualized educational advice."
+    },
+    {
+      "source_id": "SRC-TQ004-01",
+      "candidate_id": "TQ-004",
+      "title": "Improving access to Assistive Technology",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/health-topics/assistive-technology/improving-access-to-assistive-technology",
+      "tier": "tier_1",
+      "status": "discovered",
+      "supports": "WHO describes assistive technology access as involving people, policy, products, provision and personnel; notes barriers including cost, availability, awareness and trained personnel.",
+      "limits": "Does not provide a personal device-selection algorithm; episode should focus on questions to ask, not recommend a device."
+    },
+    {
+      "source_id": "SRC-TQ004-02",
+      "candidate_id": "TQ-004",
+      "title": "Wheelchair provision guidelines",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/publications/b/63432",
+      "tier": "tier_1",
+      "status": "discovered",
+      "supports": "For wheelchair provision, WHO emphasizes individual assessment, fitting, training and follow-up by trained personnel.",
+      "limits": "Wheelchair-specific; cannot generalize as a universal process for all assistive products."
+    },
+    {
+      "source_id": "SRC-TQ007-01",
+      "candidate_id": "TQ-007",
+      "title": "The UDL Guidelines",
+      "publisher": "CAST",
+      "url": "https://udlguidelines.cast.org/",
+      "tier": "tier_3",
+      "status": "discovered",
+      "supports": "Design principles may inform accessible communication and varied ways to engage/respond.",
+      "limits": "Not employment law or jurisdiction-specific recruitment guidance; candidate needs official labor/legal sources for a chosen country."
+    }
+  ],
+  "candidate_updates": [
+    {
+      "topic_id": "TQ-002",
+      "source_status": "INITIAL_SOURCE_FOUND",
+      "recommendation": "RESEARCH_MORE",
+      "reason": "W3C source supports audio description; captions guidance still needed to answer whether captions alone are sufficient."
+    },
+    {
+      "topic_id": "TQ-003",
+      "source_status": "INITIAL_SOURCE_FOUND",
+      "recommendation": "SEND_TO_REVIEW_AFTER_MORE_RESEARCH",
+      "reason": "CAST UDL framework offers a distinct educational-design angle; obtain further authoritative education sources and build a specific classroom scenario."
+    },
+    {
+      "topic_id": "TQ-004",
+      "source_status": "INITIAL_SOURCE_FOUND",
+      "recommendation": "RESEARCH_MORE",
+      "reason": "WHO provides strong system-level framing; avoid personal device recommendations and obtain further professional guidance on user-centered selection."
+    },
+    {
+      "topic_id": "TQ-007",
+      "source_status": "SOURCE_GAP",
+      "recommendation": "HOLD",
+      "reason": "Current lead is not employment-specific or jurisdiction-specific; obtain official labor/accommodation guidance before advancing."
+    }
+  ],
+  "diversity_observation": "TQ-002, TQ-003, and TQ-004 are clearly distinct in topic identity from EXP-001 AAC-definition-scope at discovery level. Formal diversity gate remains pending; TQ-007 remains held due to source gap.",
+  "next_actions": [
+    "Find authoritative captions guidance for TQ-002.",
+    "Find official inclusive education guidance to complement CAST for TQ-003.",
+    "Add a user-centered assistive technology source for TQ-004.",
+    "Select jurisdiction before researching employment accommodation for TQ-007."
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "queue_id": "TOPIC-QUEUE-001",
+  "status": "discovery_seed",
+  "note": "These are discovery candidates, not verified claims or approved episodes. Each requires source collection, verification, and diversity review.",
+  "baseline_episode": {
+    "episode_id": "EXP-001",
+    "topic_identity": "AAC-definition-scope",
+    "central_question": "هل AAC يعني جهازًا؟",
+    "takeaway": "AAC مجموعة وسائل للتواصل وليست جهازًا واحدًا."
+  },
+  "candidates": [
+    {
+      "topic_id": "TQ-001",
+      "question": "كيف نعرف أن المكان متاح فعلًا لشخص يستخدم كرسيًا متحركًا؟",
+      "category": "accessibility",
+      "topic_identity": "physical-access-journey",
+      "problem": "رحلة استخدام مكان عام من الوصول إلى استخدام الخدمة",
+      "audience": "الأسر والمعلمون ومصممو الخدمات",
+      "story_mode": "investigation",
+      "visual_metaphor": "مسار به نقاط توقف",
+      "difference_from_baseline": "موضوع إتاحة بيئية وليس تعريف AAC",
+      "sensitivity": "ordinary",
+      "status": "DISCOVERED",
+      "research_needed": [
+        "معايير إتاحة رسمية",
+        "مصادر محلية مناسبة"
+      ]
+    },
+    {
+      "topic_id": "TQ-002",
+      "question": "هل الترجمة النصية وحدها تجعل الفيديو متاحًا؟",
+      "category": "accessibility",
+      "topic_identity": "multimodal-video-access",
+      "problem": "مشاهد تعتمد على الصوت أو الصورة دون بدائل",
+      "audience": "صناع المحتوى والمعلمون",
+      "story_mode": "myth_fact",
+      "visual_metaphor": "ثلاث قنوات: صوت ونص وصورة",
+      "difference_from_baseline": "إتاحة المحتوى المرئي وليست وسائل التواصل AAC",
+      "sensitivity": "ordinary",
+      "status": "DISCOVERED",
+      "research_needed": [
+        "إرشادات الوصول الرقمي",
+        "مصادر معايير الترجمة والوصف"
+      ]
+    },
+    {
+      "topic_id": "TQ-003",
+      "question": "ماذا يحدث عندما تكون تعليمات المدرسة واضحة للمعلم لكنها غير واضحة للطالب؟",
+      "category": "education",
+      "topic_identity": "accessible-instructions",
+      "problem": "مهمة صفية غامضة وخيارات توضيحها",
+      "audience": "المعلمين والأسر",
+      "story_mode": "school-community",
+      "visual_metaphor": "تعليمات تتحول إلى خطوات مرئية",
+      "difference_from_baseline": "تصميم التعليمات والمشاركة الصفية",
+      "sensitivity": "ordinary",
+      "status": "DISCOVERED",
+      "research_needed": [
+        "إرشادات تعليمية موثوقة",
+        "أدلة تصميم التعليم الشامل"
+      ]
+    },
+    {
+      "topic_id": "TQ-004",
+      "question": "كيف نختار وسيلة مساعدة رقمية دون الانبهار بعدد مميزاتها؟",
+      "category": "assistive_technology",
+      "topic_identity": "assistive-tech-fit",
+      "problem": "قائمة ميزات لا تجيب عن احتياج المستخدم وسياقه",
+      "audience": "الأسر والمعلمون",
+      "story_mode": "decision-adventure",
+      "visual_metaphor": "مفتاح يناسب قفلًا محددًا",
+      "difference_from_baseline": "معايير ملاءمة التقنية لا تعريف AAC",
+      "sensitivity": "sensitive",
+      "status": "DISCOVERED",
+      "research_needed": [
+        "مصادر تقييم التقنية المساعدة",
+        "إرشادات رسمية أو مهنية",
+        "مراجعة حدود النصيحة الفردية"
+      ]
+    },
+    {
+      "topic_id": "TQ-005",
+      "question": "كيف نسهّل المشاركة في محادثة جماعية عندما تختلف سرعة التواصل؟",
+      "category": "social_inclusion",
+      "topic_identity": "conversation-turn-taking",
+      "problem": "مجموعة تتحدث بسرعة ولا تترك وقتًا كافيًا للمشاركة",
+      "audience": "الأصدقاء والأسر والمعلمون",
+      "story_mode": "dialogue-problem-solving",
+      "visual_metaphor": "عصا دور تتحول إلى مساحة وقت",
+      "difference_from_baseline": "مشاركة اجتماعية وإدارة أدوار المحادثة",
+      "sensitivity": "sensitive",
+      "status": "DISCOVERED",
+      "research_needed": [
+        "مصادر تواصل ومشاركة موثوقة",
+        "مراجعة عدم التعميم على الأفراد"
+      ]
+    },
+    {
+      "topic_id": "TQ-006",
+      "question": "ما الفرق بين المساعدة التي يطلبها الشخص والمساعدة التي نفترض أنه يحتاجها؟",
+      "category": "daily_life",
+      "topic_identity": "agency-and-support",
+      "problem": "موقف يومي يعرض المساعدة دون سؤال",
+      "audience": "الجمهور العام",
+      "story_mode": "day-in-life-fiction",
+      "visual_metaphor": "إشارة توقف ثم سؤال واختيار",
+      "difference_from_baseline": "الاستقلالية والاختيار في الحياة اليومية",
+      "sensitivity": "sensitive",
+      "status": "DISCOVERED",
+      "research_needed": [
+        "مصادر حقوقية ومهنية موثوقة",
+        "مراجعة اللغة واحترام agency"
+      ]
+    },
+    {
+      "topic_id": "TQ-007",
+      "question": "كيف يمكن تهيئة مقابلة عمل لتكون أوضح وأكثر إتاحة؟",
+      "category": "employment",
+      "topic_identity": "accessible-job-interview",
+      "problem": "مقابلة تعتمد على تعليمات غير معلنة أو تنسيق غير مرن",
+      "audience": "أصحاب العمل والباحثون عن عمل",
+      "story_mode": "workplace-situation",
+      "visual_metaphor": "قائمة تحقق تزيل الحواجز",
+      "difference_from_baseline": "إتاحة التوظيف وليس التواصل المعزز والبديل",
+      "sensitivity": "ordinary",
+      "status": "DISCOVERED",
+      "research_needed": [
+        "إرشادات توظيف رسمية",
+        "مصادر حقوق العمل حسب البلد"
+      ]
+    },
+    {
+      "topic_id": "TQ-008",
+      "question": "كيف نميّز بين حقيقة موثقة وتجربة فردية مفيدة لكنها لا تمثل الجميع؟",
+      "category": "media_literacy",
+      "topic_identity": "evidence-vs-anecdote",
+      "problem": "قصة شخصية تُعرض كقاعدة عامة",
+      "audience": "الجمهور العام وصناع المحتوى",
+      "story_mode": "investigation",
+      "visual_metaphor": "عدسة تكبر القصة ثم تضعها بجوار خريطة أدلة",
+      "difference_from_baseline": "فهم الأدلة والإعلام، موضوع فوقي يخدم القناة",
+      "sensitivity": "ordinary",
+      "status": "DISCOVERED",
+      "research_needed": [
+        "مصادر محو الأمية الإعلامية",
+        "مراجع تقييم الأدلة"
+      ]
+    }
+  ],
+  "gates": {
+    "diversity": "pending formal comparison before approval",
+    "verification": "not started",
+    "executive_approval": "not granted"
+  },
+  "next_action": "Run source discovery for each candidate; retain only candidates with traceable sources and a distinct story opportunity."
+}
