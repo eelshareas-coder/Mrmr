@@ -26,6 +26,10 @@ jobs:
           test -f projects/CHANNEL-AUTOMATION/MAINTENANCE-PLAYBOOK-v1.md
           test -f projects/CHANNEL-AUTOMATION/SOURCE-REGISTRY-v1.yml
           test -f projects/CHANNEL-AUTOMATION/TOPIC-DISCOVERY-ADAPTERS-v1.md
+          test -f projects/CHANNEL-AUTOMATION/TOPIC-DIVERSITY-GATE-v1.md
+          test -f projects/CHANNEL-AUTOMATION/TOPIC-SCOUT-STORY-STUDIO-CONTRACT-v1.md
+          test -f projects/CHANNEL-AUTOMATION/TOPIC-QUEUE-v1.json
+          jq -e '.version == 1 and (.candidates | length >= 5) and ([.candidates[].topic_id] | unique | length == (.candidates | length)) and all(.candidates[]; (.question | length > 10) and (.topic_identity | length > 3) and .status == "DISCOVERED") and .gates.executive_approval == "not granted"' projects/CHANNEL-AUTOMATION/TOPIC-QUEUE-v1.json
 
       - name: Validate episode production contracts
         shell: bash
