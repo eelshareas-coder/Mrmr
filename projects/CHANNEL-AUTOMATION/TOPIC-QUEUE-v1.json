@@ -2,7 +2,7 @@
   "version": 1,
   "queue_id": "TOPIC-QUEUE-001",
   "status": "discovery_seed",
-  "note": "These are discovery candidates, not verified claims or approved episodes. Each requires source collection, verification, and diversity review.",
+  "note": "These are discovery candidates. TQ-002 has completed verification and executive approval; remaining candidates still require source collection, verification, and diversity review.",
   "baseline_episode": {
     "episode_id": "EXP-001",
     "topic_identity": "AAC-definition-scope",
@@ -33,16 +33,17 @@
       "category": "accessibility",
       "topic_identity": "multimodal-video-access",
       "problem": "مشاهد تعتمد على الصوت أو الصورة دون بدائل",
-      "audience": "صناع المحتوى والمعلمون",
+      "audience": "صناع المحتوى والمعلمون والجمهور المهتم بالإتاحة",
       "story_mode": "myth_fact",
       "visual_metaphor": "ثلاث قنوات: صوت ونص وصورة",
       "difference_from_baseline": "إتاحة المحتوى المرئي وليست وسائل التواصل AAC",
       "sensitivity": "ordinary",
-      "status": "DISCOVERED",
-      "research_needed": [
-        "إرشادات الوصول الرقمي",
-        "مصادر معايير الترجمة والوصف"
-      ]
+      "status": "APPROVED",
+      "research_needed": [],
+      "verification_package_id": "VP-TQ-002-v1",
+      "diversity_result": "PASS",
+      "executive_approval": "GRANTED",
+      "next_state": "SCRIPTING"
     },
     {
       "topic_id": "TQ-003",
@@ -149,9 +150,9 @@
     }
   ],
   "gates": {
-    "diversity": "pending formal comparison before approval",
-    "verification": "not started",
-    "executive_approval": "not granted"
+    "diversity": "TQ-002 PASS",
+    "verification": "TQ-002 VERIFIED",
+    "executive_approval": "TQ-002 GRANTED"
   },
-  "next_action": "Run source discovery for each candidate; retain only candidates with traceable sources and a distinct story opportunity."
+  "next_action": "TQ-002 enters SCRIPTING; continue discovery/research for the remaining candidates."
 }
