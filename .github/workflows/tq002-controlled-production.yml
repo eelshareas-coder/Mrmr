@@ -1,0 +1,63 @@
+name: TQ-002 Controlled Production Factory
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "projects/CHANNEL-AUTOMATION/TQ-002-*"
+      - "projects/CHANNEL-AUTOMATION/PRODUCTION-FACTORY-v1.md"
+
+permissions:
+  contents: read
+
+jobs:
+  production-gate:
+    name: Validate TQ-002 production package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required production inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="projects/CHANNEL-AUTOMATION"
+          required=(
+            "TQ-002-EPISODE-BRIEF-v1.md"
+            "TQ-002-SCRIPT-v1.md"
+            "TQ-002-STORYBOARD-v1.md"
+            "TQ-002-ASSET-MANIFEST-v1.yml"
+            "TQ-002-VOICE-SPEC-v1.yml"
+            "TQ-002-PRODUCTION-SPEC-v1.md"
+            "TQ-002-QA-CHECKLIST-v1.yml"
+          )
+          for file in "${required[@]}"; do
+            test -f "$base/$file"
+          done
+
+      - name: Validate production is not publish-authorized
+        shell: bash
+        run: |
+          set -euo pipefail
+          queue="projects/CHANNEL-AUTOMATION/TOPIC-QUEUE-v1.json"
+          test -f "$queue"
+          jq -e '.gates.executive_approval == "not granted"' "$queue" >/dev/null
+          echo "Publishing authorization remains blocked."
+
+      - name: Validate no unresolved rights are silently accepted
+        shell: bash
+        run: |
+          set -euo pipefail
+          manifest="projects/CHANNEL-AUTOMATION/TQ-002-ASSET-MANIFEST-v1.yml"
+          test -f "$manifest"
+          if grep -Eiq "rights(_status)?[[:space:]]*:[[:space:]]*(unknown|unresolved|pending)" "$manifest"; then
+            echo "Asset rights contain unresolved status."
+            exit 1
+          fi
+
+      - name: Production status
+        run: |
+          echo "TQ-002 production factory gate passed."
+          echo "This workflow validates controlled production inputs only."
+          echo "It does not render, publish, or grant publishing authorization."
