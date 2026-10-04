@@ -1,0 +1,33 @@
+version: 1
+episode_id: TQ-002
+asset_policy: "original_assets_only"
+assets:
+  - asset_id: TQ002-CHAR-NOOR
+    type: character
+    source: "original fictional character Noor"
+    rights_status: owned_original
+  - asset_id: TQ002-VIDEO-UI
+    type: graphic
+    source: "original motion graphic interface"
+    rights_status: owned_original
+  - asset_id: TQ002-CHECKLIST
+    type: graphic
+    source: "original production checklist"
+    rights_status: owned_original
+  - asset_id: TQ002-ENDCARD
+    type: graphic
+    source: "original end card"
+    rights_status: owned_original
+  - asset_id: TQ002-BG
+    type: background
+    source: "original generated/created background"
+    rights_status: owned_original
+  - asset_id: TQ002-VOICE
+    type: voice
+    source: "approved production voice"
+    rights_status: pending_voice_provenance
+rights_gate:
+  third_party_footage: prohibited
+  unlicensed_music: prohibited
+  copyrighted_character_reproduction: prohibited
+  external_asset_provenance_required: true
