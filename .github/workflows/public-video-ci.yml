@@ -1,0 +1,65 @@
+name: Public Video & Production CI
+
+on:
+  push:
+    paths:
+      - "projects/**"
+      - ".github/workflows/public-video-ci.yml"
+  pull_request:
+    paths:
+      - "projects/**"
+      - ".github/workflows/public-video-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-public-production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate company and episode contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in \
+            projects/CHANNEL-AUTOMATION/COMPANY-ARCHITECTURE-v1.md \
+            projects/CHANNEL-AUTOMATION/OPERATING-CONTRACT-v1.md \
+            projects/CHANNEL-AUTOMATION/STATE-MACHINE.md \
+            projects/CHANNEL-AUTOMATION/MAINTENANCE-PLAYBOOK-v1.md \
+            projects/CHANNEL-AUTOMATION/SOURCE-REGISTRY-v1.yml \
+            projects/CHANNEL-AUTOMATION/TOPIC-QUEUE-v1.json \
+            projects/EXP-001-aac-video/PRODUCTION_STATUS.md \
+            projects/EXP-001-aac-video/EPISODE-SERIES-PACKAGE-v1.md \
+            projects/EXP-001-aac-video/ASSET_MANIFEST.md; do
+            test -f "$f"
+          done
+          jq -e '
+            .version == 1 and
+            (.candidates | length >= 5) and
+            ([.candidates[].topic_id] | unique | length) == (.candidates | length) and
+            (
+              [.candidates[] |
+                select(
+                  (.question | length > 10) and
+                  (.topic_identity | length > 3) and
+                  (.status | IN("DISCOVERED","RESEARCHING","VERIFIED","EXECUTIVE_REVIEW","APPROVED","BLOCKED"))
+                )
+              ] | length
+            ) == (.candidates | length) and
+            .gates.executive_approval == "not granted"
+          ' projects/CHANNEL-AUTOMATION/TOPIC-QUEUE-v1.json
+      - name: Ensure no secret-like values are committed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git grep -nEI '(gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|AIza[0-9A-Za-z_-]{30,}|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----)' -- ':!*.lock'; then
+            echo "::error::Potential credential material detected. Remove it and rotate the credential."
+            exit 1
+          fi
+      - name: Report public pipeline status
+        run: |
+          echo "PUBLIC_VIDEO_CI=PASS"
+          echo "SECRETS_REQUIRED=false"
+          echo "PUBLISHING=NOT_AUTHORIZED"

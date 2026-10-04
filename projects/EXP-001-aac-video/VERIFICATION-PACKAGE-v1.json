@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "verification_package_id": "VP-EXP001-AAC-v1",
+  "topic_id": "TOPIC-EXP001-AAC",
+  "evidence_card": {
+    "topic_id": "TOPIC-EXP001-AAC",
+    "verification_package_id": "VP-EXP001-AAC-v1",
+    "question": "هل AAC يعني جهازًا أو تطبيقًا واحدًا؟",
+    "scope": "تعريف AAC وأنواعه وعلاقته بالتواصل المنطوق واختيار وسائل التواصل.",
+    "audience": "Families, educators, and people interested in accessible communication.",
+    "summary": "AAC هو مجموعة من الأساليب والوسائل التي قد تدعم أو تعوض التواصل بالكلام، وتشمل وسائل غير معتمدة على جهاز خارجي مثل الإشارات والإيماءات، ووسائل معتمدة مثل لوحات التواصل والأجهزة مولدة الكلام. يمكن استخدام أكثر من نمط بحسب الشخص والسياق.",
+    "evidence_strength": "strong",
+    "evidence_as_of": "2026-09-27",
+    "sensitivity_level": "sensitive"
+  },
+  "claim_ledger": [
+    {
+      "claim_id": "C1",
+      "claim_text": "AAC ليس جهازًا واحدًا؛ يمكن أن يشمل وسائل غير معتمدة على أدوات خارجية ووسائل معتمدة مثل لوحات التواصل والأجهزة مولدة الكلام.",
+      "claim_type": "FACT",
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "support_status": "SUPPORTED",
+      "scope_or_population": "تعريف ومجال AAC عبر الأعمار.",
+      "time_boundary": "current guidance accessed 2026-09-27",
+      "wording_limit": "لا تُحصر AAC في الأجهزة أو التطبيقات."
+    },
+    {
+      "claim_id": "C2",
+      "claim_text": "يمكن أن يستخدم الشخص AAC مع الكلام الموجود، ويمكن أن تتغير الوسيلة أو النمط بحسب السياق واحتياجات الشخص.",
+      "claim_type": "FACT",
+      "source_ids": [
+        "S1"
+      ],
+      "support_status": "SUPPORTED",
+      "scope_or_population": "إرشادات ASHA حول AAC متعدد الأنماط.",
+      "time_boundary": "current guidance accessed 2026-09-27",
+      "wording_limit": "لا تُصغ كقاعدة علاجية أو وعد بزيادة الكلام."
+    },
+    {
+      "claim_id": "C3",
+      "claim_text": "اختيار نظام AAC يعتمد على احتياجات الشخص والسياق والشركاء وخصائص الوصول والتواصل.",
+      "claim_type": "FACT",
+      "source_ids": [
+        "S1"
+      ],
+      "support_status": "SUPPORTED",
+      "scope_or_population": "إرشادات ASHA حول اختيار أنظمة AAC.",
+      "time_boundary": "current guidance accessed 2026-09-27",
+      "wording_limit": "لا تقدّم توصية فردية أو تشخيصًا."
+    }
+  ],
+  "source_ledger": [
+    {
+      "source_id": "S1",
+      "title": "Augmentative and Alternative Communication (AAC) — Practice Portal",
+      "publisher": "American Speech-Language-Hearing Association (ASHA)",
+      "url": "https://www.asha.org/Practice-Portal/Professional-Issues/Augmentative-and-Alternative-Communication/",
+      "tier": "tier_3",
+      "publication_date": null,
+      "accessed_at": "2026-09-27",
+      "status": "verified",
+      "supports_claim_ids": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "notes": "Professional association guidance; page describes unaided/aided AAC, multimodal use, and individualized selection."
+    },
+    {
+      "source_id": "S2",
+      "title": "Assistive Devices for People with Hearing or Speech Disorders",
+      "publisher": "National Institute on Deafness and Other Communication Disorders (NIDCD)",
+      "url": "https://www.nidcd.nih.gov/health/assistive-devices-people-hearing-voice-speech-or-language-disorders",
+      "tier": "tier_1",
+      "publication_date": null,
+      "accessed_at": "2026-09-27",
+      "status": "verified",
+      "supports_claim_ids": [
+        "C1"
+      ],
+      "notes": "U.S. federal health institute; describes AAC devices ranging from picture boards to speech-generating technology."
+    }
+  ],
+  "uncertainty_notes": [
+    "هذا package لا يثبت فعالية علاجية عامة لـ AAC ولا يثبت أن AAC يزيد الكلام في كل شخص.",
+    "اختيار وسيلة AAC بعينها يحتاج تقييمًا فرديًا؛ هذا المحتوى لا يقدم توصية لشخص محدد.",
+    "الدليل هنا مناسب لتعريف AAC ومبادئ عامة، وليس لمقارنة فعالية أجهزة أو تدخلات محددة."
+  ],
+  "audience_framing": {
+    "recommended_framing": "اشرح AAC كنظام متعدد الوسائط لدعم التواصل، مع إبراز أن الجهاز قد يكون جزءًا من النظام وليس تعريفه الكامل.",
+    "prohibited_inference": "لا توحِ بأن كل شخص يحتاج جهازًا، أو بأن AAC يستبدل الكلام دائمًا، أو بأنه يضمن نتيجة علاجية."
+  },
+  "red_flag_review": {
+    "completed": true,
+    "flags": []
+  },
+  "verification_decision": {
+    "decision": "VERIFIED",
+    "checked_at": "2026-09-27",
+    "checker": "Research Evidence Collector v1",
+    "rationale": "All production claims have source mappings; authoritative and professional sources support the definitional claims; limitations are recorded; no unsupported production claim remains."
+  }
+}

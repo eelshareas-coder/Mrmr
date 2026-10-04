@@ -1,0 +1,33 @@
+version: 1
+episode_id: TQ-002
+status: DRAFT_NON_PUBLISHABLE
+working_title: "هل الترجمة النصية وحدها تجعل الفيديو متاحًا؟"
+language: ar-EG
+format: "short educational animation"
+target_duration_seconds: 90
+title_policy:
+  question_led: true
+  avoid_universal_claims: true
+description: "الترجمة النصية مهمة، لكن هل هي كل ما نحتاجه لجعل الفيديو متاحًا؟ الحلقة تشرح الفرق بين نقل الكلام والأصوات وبين نقل المعلومات المهمة التي تظهر في الصورة، ولماذا تختلف وسائل الإتاحة حسب محتوى الفيديو."
+description_disclaimer: "محتوى تعليمي عام — ليس تقييمًا فرديًا."
+tags:
+  - accessibility
+  - captions
+  - subtitles
+  - audio description
+  - descriptive transcript
+  - video accessibility
+  - الإتاحة
+  - الترجمة النصية
+  - وصف المحتوى البصري
+thumbnail_concept:
+  status: DRAFT
+  text: "ترجمة = إتاحة كاملة؟"
+  visual: "Noor أمام لوحة بثلاثة مسارات: صوت / نص / معلومات بصرية"
+  constraints:
+    - "original artwork only"
+    - "no third-party logos"
+    - "no misleading universal claim"
+publishing:
+  authorized: false
+  reason: "company-level publishing authorization not granted"

@@ -1,0 +1,88 @@
+version: 1
+topic_id: TQ-002
+verification_package_id: VP-TQ-002-v1
+question: "هل الترجمة النصية وحدها تجعل الفيديو متاحًا؟"
+scope: "Prererecorded video accessibility, focusing on the relationship between captions and other ways of conveying important visual information."
+audience:
+  - "صناع المحتوى"
+  - "المعلمون"
+  - "الجمهور المهتم بالإتاحة"
+evidence_card:
+  summary: "Captions are an important accessibility layer because they convey speech and relevant non-speech audio information. They do not automatically communicate important visual information that is absent from the audio; depending on the media, audio description or a text-based alternative may be appropriate."
+  evidence_strength: strong
+  evidence_as_of: "2026-10-04"
+  sensitivity_level: ordinary
+source_ledger:
+  - source_id: W3C-CAP-001
+    title: "Captions/Subtitles"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/media/av/captions/"
+    tier: tier_1
+    publication_or_update: "2024-09-17"
+    accessed_at: "2026-10-04"
+    status: verified
+    supports_claim_ids: ["TQ002-C001"]
+  - source_id: W3C-DESC-001
+    title: "Description of Visual Information"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/media/av/description/"
+    tier: tier_1
+    publication_or_update: "2024-09-17"
+    accessed_at: "2026-10-04"
+    status: verified
+    supports_claim_ids: ["TQ002-C002"]
+  - source_id: W3C-TRANS-001
+    title: "Transcripts"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/media/av/transcripts/"
+    tier: tier_1
+    publication_or_update: "2024-09-17"
+    accessed_at: "2026-10-04"
+    status: verified
+    supports_claim_ids: ["TQ002-C003"]
+  - source_id: W3C-WCAG-1.2.2
+    title: "Understanding Success Criterion 1.2.2: Captions (Prerecorded)"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded"
+    tier: tier_1
+    publication_or_update: "current"
+    accessed_at: "2026-10-04"
+    status: verified
+    supports_claim_ids: ["TQ002-C001"]
+  - source_id: W3C-WCAG-1.2.3
+    title: "Understanding Success Criterion 1.2.3: Audio Description or Media Alternative (Prerecorded)"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded"
+    tier: tier_1
+    publication_or_update: "current"
+    accessed_at: "2026-10-04"
+    status: verified
+    supports_claim_ids: ["TQ002-C002", "TQ002-C003"]
+  - source_id: W3C-WCAG-1.2.5
+    title: "Understanding Success Criterion 1.2.5: Audio Description (Prerecorded)"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded"
+    tier: tier_1
+    publication_or_update: "current"
+    accessed_at: "2026-10-04"
+    status: verified
+    supports_claim_ids: ["TQ002-C002"]
+uncertainty_notes:
+  - "لا ينبغي تعميم أن الترجمة النصية غير كافية لكل شخص أو لكل فيديو؛ مدى الحاجة إلى وسائل إضافية يعتمد على المعلومات الموجودة في المحتوى."
+  - "لا ينبغي تحويل إرشادات WCAG إلى نصيحة علاجية أو تقييم فردي."
+  - "لا ينبغي الادعاء بأن وسيلة واحدة تحقق الإتاحة لكل الجمهور."
+audience_framing:
+  recommended: "الترجمة النصية خطوة أساسية، لكن الإتاحة قد تحتاج طبقات إضافية عندما يحمل الفيديو معلومات مهمة في الصورة لا ينقلها الصوت."
+  avoid:
+    - "الترجمة النصية لا تفيد."
+    - "الترجمة النصية تجعل أي فيديو متاحًا للجميع."
+    - "كل فيديو يحتاج نفس حزمة الإتاحة."
+red_flag_review:
+  status: PASS
+  flags:
+    - "Avoid universal claims."
+    - "Keep captions distinct from audio description and descriptive transcripts."
+    - "Do not present WCAG conformance as a medical or individualized recommendation."
+verification_decision:
+  decision: VERIFIED
+  rationale: "All production claims have source mappings, authoritative source tiers are satisfied, uncertainty boundaries are recorded, and no production claim is unsupported."

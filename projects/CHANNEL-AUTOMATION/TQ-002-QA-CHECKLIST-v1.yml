@@ -1,0 +1,25 @@
+version: 1
+episode_id: TQ-002
+qa_version: 1
+checks:
+  evidence:
+    - "Every factual claim maps to a verified claim_id."
+    - "No unsupported or universal claim appears in narration, graphics, title, or description."
+  story:
+    - "Central question and takeaway remain distinct from EXP-001."
+    - "Visual metaphor and character goal match the approved brief."
+  accessibility:
+    - "Captions accurately represent speech and relevant non-speech audio."
+    - "Important visual information is conveyed in narration where practical."
+    - "Descriptive transcript includes important visual information."
+    - "On-screen text is readable and not dependent on color alone."
+  rights:
+    - "All assets have provenance."
+    - "No unlicensed third-party footage, music, characters, or graphics."
+  safety:
+    - "No diagnosis."
+    - "No individualized treatment or educational plan."
+    - "No promise that one accessibility method works for everyone."
+  publishing:
+    - "PUBLISH_READY cannot pass without complete metadata, thumbnail, captions, rights provenance, and QA approval."
+status: NOT_RUN

@@ -1,0 +1,32 @@
+version: 1
+episode_id: TQ-002
+status: DRAFT_PENDING_FINAL_ASSET_PROVENANCE
+asset_policy: original_assets_only
+assets:
+  - id: TQ002-CHAR-NOOR
+    provenance: "original fictional character Noor"
+    rights_status: owned_original
+  - id: TQ002-VIDEO-UI
+    provenance: "original motion graphic interface"
+    rights_status: owned_original
+  - id: TQ002-CHECKLIST
+    provenance: "original production checklist graphic"
+    rights_status: owned_original
+  - id: TQ002-ENDCARD
+    provenance: "original end card"
+    rights_status: owned_original
+  - id: TQ002-BG
+    provenance: "original generated/created background"
+    rights_status: owned_original
+  - id: TQ002-VOICE
+    provenance: "approved production voice; recording not yet attached"
+    rights_status: pending_voice_provenance
+sources:
+  - "W3C media accessibility guidance used as factual reference"
+  - "W3C/WCAG references are not copied verbatim into production"
+restrictions:
+  third_party_footage: prohibited
+  unlicensed_music: prohibited
+  copyrighted_character_reproduction: prohibited
+publish_ready: false
+reason: "final asset provenance and QA are pending"

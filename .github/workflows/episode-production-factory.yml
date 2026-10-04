@@ -1,0 +1,69 @@
+name: Episode Production Factory
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode_id:
+        description: "Episode identifier, e.g. TQ-002"
+        required: true
+        type: string
+  push:
+    paths:
+      - "projects/CHANNEL-AUTOMATION/*-EPISODE-BRIEF-v1.md"
+      - "projects/CHANNEL-AUTOMATION/*-SCRIPT-v1.md"
+      - "projects/CHANNEL-AUTOMATION/*-STORYBOARD-v1.md"
+      - "projects/CHANNEL-AUTOMATION/*-ASSET-MANIFEST-v1.yml"
+      - "projects/CHANNEL-AUTOMATION/*-VOICE-SPEC-v1.yml"
+      - "projects/CHANNEL-AUTOMATION/*-QA-CHECKLIST-v1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate episode production package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve episode
+        id: episode
+        shell: bash
+        env:
+          INPUT_EPISODE: ${{ inputs.episode_id }}
+        run: |
+          set -euo pipefail
+          if [ -n "$INPUT_EPISODE" ]; then
+            echo "episode_id=$INPUT_EPISODE" >> "$GITHUB_OUTPUT"
+          else
+            echo "No manual episode supplied; package-trigger validation will use repository files."
+          fi
+
+      - name: Validate factory inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="projects/CHANNEL-AUTOMATION"
+          found=0
+          for brief in "$base"/*-EPISODE-BRIEF-v1.md; do
+            [ -e "$brief" ] || continue
+            found=1
+            id="$(basename "$brief" | sed 's/-EPISODE-BRIEF-v1.md$//')"
+            for suffix in SCRIPT-v1.md STORYBOARD-v1.md ASSET-MANIFEST-v1.yml VOICE-SPEC-v1.yml QA-CHECKLIST-v1.yml; do
+              test -f "$base/$id-$suffix" || { echo "Missing $id-$suffix"; exit 1; }
+            done
+          done
+          test "$found" -eq 1
+
+      - name: Enforce release safety gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          queue="projects/CHANNEL-AUTOMATION/TOPIC-QUEUE-v1.json"
+          jq -e '.gates.executive_approval == "not granted"' "$queue" >/dev/null
+          echo "Publishing remains locked."
+
+      - name: Factory result
+        run: |
+          echo "Episode Production Factory validation passed."
+          echo "No rendering or publishing is performed by this gate."

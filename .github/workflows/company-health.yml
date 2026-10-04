@@ -1,0 +1,48 @@
+name: Company Health & Continuity
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Validate automation contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f projects/CHANNEL-AUTOMATION/COMPANY-ARCHITECTURE-v1.md
+          test -f projects/CHANNEL-AUTOMATION/OPERATING-CONTRACT-v1.md
+          test -f projects/CHANNEL-AUTOMATION/STATE-MACHINE.md
+          test -f projects/CHANNEL-AUTOMATION/MAINTENANCE-PLAYBOOK-v1.md
+          test -f projects/CHANNEL-AUTOMATION/SOURCE-REGISTRY-v1.yml
+          test -f projects/CHANNEL-AUTOMATION/TOPIC-DISCOVERY-ADAPTERS-v1.md
+          test -f projects/CHANNEL-AUTOMATION/TOPIC-DIVERSITY-GATE-v1.md
+          test -f projects/CHANNEL-AUTOMATION/TOPIC-SCOUT-STORY-STUDIO-CONTRACT-v1.md
+          test -f projects/CHANNEL-AUTOMATION/TOPIC-QUEUE-v1.json
+          jq -e '.version == 1 and (.candidates | length >= 5) and ([.candidates[].topic_id] | unique | length) == (.candidates | length) and all(.candidates[]; (.question | length > 10) and (.topic_identity | length > 3) and (.status | IN("DISCOVERED","RESEARCHING","VERIFIED","EXECUTIVE_REVIEW","APPROVED","BLOCKED"))) and .gates.executive_approval == "not granted"' projects/CHANNEL-AUTOMATION/TOPIC-QUEUE-v1.json
+
+      - name: Validate episode production contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f projects/EXP-001-aac-video/PRODUCTION_STATUS.md
+          test -f projects/EXP-001-aac-video/EPISODE-SERIES-PACKAGE-v1.md
+          test -f projects/EXP-001-aac-video/ASSET_MANIFEST.md
+
+      - name: Report healthy state
+        run: |
+          echo "COMPANY_STATE=NORMAL"
+          echo "MANAGER_ROLE=GENERAL_MANAGER"
+          echo "DEPUTY_ROLE=MAHMOUD"
+          echo "SELF_REPAIR=CONTROLLED"
+          echo "PUBLISHING_GATE=ENFORCED"

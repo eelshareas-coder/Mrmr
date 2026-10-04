@@ -1,0 +1,19 @@
+version: 1
+episode_id: TQ-002
+language: ar-EG
+voice_style: "clear, warm, educational, conversational"
+delivery:
+  pace: moderate
+  pauses_between_concepts: required
+  jargon: minimize_or_explain
+  emotional_style: "curious, not alarmist"
+recording_rules:
+  - "Every spoken production claim must match the approved claim ledger."
+  - "Do not add unscripted scientific claims during recording."
+  - "Keep pronunciation of accessibility terms consistent."
+accessibility:
+  captions: required
+  descriptive_transcript: required_for_QA
+  important_visual_logic: "also conveyed in main narration where practical"
+provenance:
+  status: pending_recording
