@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "topic_id": "TQ-002",
+  "verification_package_id": "VP-TQ-002-v1",
+  "claims": [
+    {
+      "claim_id": "TQ002-C001",
+      "claim_text": "Captions provide text for speech and relevant non-speech audio information in synchronized media.",
+      "claim_type": "FACT",
+      "source_ids": ["W3C-CAP-001", "W3C-WCAG-1.2.2"],
+      "source_refs": ["https://www.w3.org/WAI/media/av/captions/", "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded"],
+      "page_or_section": "Captions/Subtitles; WCAG 2.2 SC 1.2.2",
+      "population_context": "Prerecorded synchronized media; accessibility context",
+      "limitations": "Captions address auditory information; they do not by themselves convey all visual information.",
+      "confidence": "high",
+      "support_status": "SUPPORTED",
+      "review_status": "VERIFIED",
+      "reviewer": "Research & Verification Engine",
+      "reviewed_at": "2026-10-04"
+    },
+    {
+      "claim_id": "TQ002-C002",
+      "claim_text": "When important visual information is not conveyed through the main audio, audio description or another appropriate text alternative can provide access to that visual information.",
+      "claim_type": "GUIDELINE",
+      "source_ids": ["W3C-DESC-001", "W3C-WCAG-1.2.3", "W3C-WCAG-1.2.5"],
+      "source_refs": ["https://www.w3.org/WAI/media/av/description/", "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded", "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-prerecorded"],
+      "page_or_section": "Description of Visual Information; WCAG 2.2 SC 1.2.3 and 1.2.5",
+      "population_context": "Prerecorded synchronized media; people who cannot adequately access visual information",
+      "limitations": "The appropriate alternative depends on the media type and the information that must be conveyed; this is not a universal requirement for every video in exactly the same form.",
+      "confidence": "high",
+      "support_status": "SUPPORTED",
+      "review_status": "VERIFIED",
+      "reviewer": "Research & Verification Engine",
+      "reviewed_at": "2026-10-04"
+    },
+    {
+      "claim_id": "TQ002-C003",
+      "claim_text": "A descriptive transcript can combine auditory and visual information and can support a wider range of access needs.",
+      "claim_type": "GUIDELINE",
+      "source_ids": ["W3C-TRANS-001", "W3C-WCAG-1.2.3"],
+      "source_refs": ["https://www.w3.org/WAI/media/av/transcripts/", "https://www.w3.org/WAI/WCAG22/Understanding/audio-description-or-media-alternative-prerecorded"],
+      "page_or_section": "Transcripts; WCAG 2.2 SC 1.2.3",
+      "population_context": "Media alternatives and descriptive transcripts",
+      "limitations": "A descriptive transcript is an alternative format; it is not identical to captions and should not be presented as a universal substitute for every accessibility method.",
+      "confidence": "high",
+      "support_status": "SUPPORTED",
+      "review_status": "VERIFIED",
+      "reviewer": "Research & Verification Engine",
+      "reviewed_at": "2026-10-04"
+    }
+  ],
+  "decision": {
+    "status": "VERIFIED",
+    "notes": "Production claims are mapped to authoritative W3C/WAI sources. The episode must not claim that captions are useless or sufficient for every audience; wording must remain media-context dependent."
+  }
+}
