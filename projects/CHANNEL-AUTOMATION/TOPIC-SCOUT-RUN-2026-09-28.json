@@ -2,7 +2,7 @@
   "version": 1,
   "scout_run_id": "SCOUT-RUN-2026-09-28-01",
   "status": "DISCOVERY_WITH_INITIAL_SOURCE_MATCHES",
-  "accessed_date": "2026-09-28",
+  "accessed_date": "2026-10-04",
   "rule": "Sources below are discovery leads only. They are not yet a claim-level verification package; no candidate is approved for scripting.",
   "source_records": [
     {
@@ -70,14 +70,47 @@
       "status": "discovered",
       "supports": "Design principles may inform accessible communication and varied ways to engage/respond.",
       "limits": "Not employment law or jurisdiction-specific recruitment guidance; candidate needs official labor/legal sources for a chosen country."
+    },
+    {
+      "source_id": "SRC-TQ002-02",
+      "candidate_id": "TQ-002",
+      "title": "Captions/Subtitles in Making Audio and Video Media Accessible",
+      "publisher": "W3C Web Accessibility Initiative",
+      "url": "https://www.w3.org/WAI/media/av/captions/",
+      "tier": "tier_1",
+      "status": "discovered",
+      "supports": "Captions represent speech and meaningful non-speech audio synchronized with the media; automatically generated captions need accuracy review; W3C explains captions are for Deaf and hard-of-hearing audiences.",
+      "limits": "This source explains captioning, not the complete set of accessibility needs for every video; it distinguishes captions from audio description and transcripts."
+    },
+    {
+      "source_id": "SRC-TQ002-03",
+      "candidate_id": "TQ-002",
+      "title": "Planning Audio and Video Media",
+      "publisher": "W3C Web Accessibility Initiative",
+      "url": "https://www.w3.org/WAI/media/av/planning/",
+      "tier": "tier_1",
+      "status": "discovered",
+      "supports": "For prerecorded video with audio, W3C distinguishes captions from audio description when visual information is not already available in audio; its checklist also discusses transcripts and accessible media players.",
+      "limits": "Requirements vary by media type and WCAG level; do not imply every video needs every alternative in every circumstance."
+    },
+    {
+      "source_id": "SRC-TQ002-04",
+      "candidate_id": "TQ-002",
+      "title": "Audio Content and Video Content",
+      "publisher": "W3C Web Accessibility Initiative",
+      "url": "https://www.w3.org/WAI/media/av/av-content/",
+      "tier": "tier_1",
+      "status": "discovered",
+      "supports": "Accessibility should be considered during planning, scripting, storyboarding, recording, and production; important visual information may need description for people who cannot see it.",
+      "limits": "Guidance is broad and should be translated into a scenario-specific checklist rather than treated as a universal legal determination."
     }
   ],
   "candidate_updates": [
     {
       "topic_id": "TQ-002",
-      "source_status": "INITIAL_SOURCE_FOUND",
-      "recommendation": "RESEARCH_MORE",
-      "reason": "W3C source supports audio description; captions guidance still needed to answer whether captions alone are sufficient."
+      "source_status": "MULTIPLE_AUTHORITATIVE_SOURCE_LEADS_FOUND",
+      "recommendation": "READY_FOR_CLAIM_LEVEL_VERIFICATION",
+      "reason": "W3C sources now cover captions, audio description, transcripts, and production planning. The episode can accurately test the claim that captions alone do not address all possible access barriers, while explaining that needs depend on the video's content and audience."
     },
     {
       "topic_id": "TQ-003",
@@ -100,9 +133,8 @@
   ],
   "diversity_observation": "TQ-002, TQ-003, and TQ-004 are clearly distinct in topic identity from EXP-001 AAC-definition-scope at discovery level. Formal diversity gate remains pending; TQ-007 remains held due to source gap.",
   "next_actions": [
-    "Find authoritative captions guidance for TQ-002.",
-    "Find official inclusive education guidance to complement CAST for TQ-003.",
-    "Add a user-centered assistive technology source for TQ-004.",
-    "Select jurisdiction before researching employment accommodation for TQ-007."
+    "Build claim ledger for TQ-002: captions cover speech and meaningful audio; audio description may be needed when visual information is not conveyed in audio; transcript needs vary by context; captions must be checked for accuracy.",
+    "Compare TQ-002 against EXP-001 and the episode ledger; formal diversity remains pending.",
+    "Continue research for TQ-003 and TQ-004; TQ-007 remains held pending jurisdiction-specific sources."
   ]
 }
