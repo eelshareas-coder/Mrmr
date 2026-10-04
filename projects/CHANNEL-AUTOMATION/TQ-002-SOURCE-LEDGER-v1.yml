@@ -1,0 +1,44 @@
+version: 1
+topic_id: TQ-002
+purpose: "Evidence sources for the candidate topic; this does not approve the episode."
+sources:
+  - source_id: W3C-AV-001
+    title: "Making Audio and Video Media Accessible"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/media/av/"
+    tier: tier_1
+    publication_or_update: "2024-09-17"
+    status: verified_source
+    notes: "Explains captions, visual description, transcripts, sign language, and accessible media players."
+  - source_id: W3C-CAP-001
+    title: "Captions/Subtitles"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/media/av/captions/"
+    tier: tier_1
+    publication_or_update: "2024-09-17"
+    status: verified_source
+    notes: "Defines captions as text for speech and relevant non-speech audio; notes visual-description support."
+  - source_id: W3C-DESC-001
+    title: "Description of Visual Information"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/media/av/description/"
+    tier: tier_1
+    publication_or_update: "2024-09-17"
+    status: verified_source
+    notes: "Explains why visual description is needed when important visual information is not available through audio."
+  - source_id: W3C-PLAN-001
+    title: "Planning Audio and Video Media"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/media/av/planning/"
+    tier: tier_1
+    publication_or_update: "2024-09-17"
+    status: verified_source
+    notes: "Maps different media types to accessibility requirements and alternatives."
+  - source_id: W3C-TRANS-001
+    title: "Transcripts"
+    publisher: "W3C Web Accessibility Initiative"
+    url: "https://www.w3.org/WAI/media/av/transcripts/"
+    tier: tier_1
+    publication_or_update: "2024-09-17"
+    status: verified_source
+    notes: "Distinguishes basic and descriptive transcripts and explains their role for a wider range of users."
