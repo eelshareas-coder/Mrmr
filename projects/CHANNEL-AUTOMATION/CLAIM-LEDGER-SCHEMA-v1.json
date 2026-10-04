@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "description": "Evidence ledger; registration is not approval.",
+  "required_fields": [
+    "claim_id",
+    "topic_id",
+    "claim_text",
+    "claim_type",
+    "source_refs",
+    "page_or_section",
+    "population_context",
+    "limitations",
+    "confidence",
+    "review_status",
+    "reviewer",
+    "reviewed_at"
+  ],
+  "claim_type": [
+    "research_finding",
+    "guideline",
+    "standard",
+    "law_or_policy",
+    "lived_experience",
+    "interpretation",
+    "opinion"
+  ],
+  "confidence": [
+    "high",
+    "moderate",
+    "low",
+    "uncertain"
+  ],
+  "review_status": [
+    "UNREVIEWED",
+    "IN_REVIEW",
+    "VERIFIED",
+    "HOLD",
+    "REJECTED"
+  ],
+  "rules": [
+    "No claim reaches SCRIPTING unless review_status is VERIFIED.",
+    "Record uncertainty and conflicting evidence.",
+    "Cite page/section for books and stable URL for web sources.",
+    "Clinical or individualized intervention claims require qualified human review."
+  ]
+}\n
