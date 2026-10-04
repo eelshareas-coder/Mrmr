@@ -1,0 +1,62 @@
+name: TQ-002 Controlled Production Gate
+
+on:
+  push:
+    paths:
+      - "projects/CHANNEL-AUTOMATION/TQ-002-*"
+      - ".github/workflows/tq002-production-gate.yml"
+  pull_request:
+    paths:
+      - "projects/CHANNEL-AUTOMATION/TQ-002-*"
+      - ".github/workflows/tq002-production-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  controlled-production-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Validate controlled production package
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="projects/CHANNEL-AUTOMATION"
+          for f in             "$base/TQ-002-EPISODE-BRIEF-v1.md"             "$base/TQ-002-SCRIPT-v1.md"             "$base/TQ-002-STORYBOARD-v1.md"             "$base/TQ-002-ASSET-MANIFEST-v1.yml"             "$base/TQ-002-VOICE-SPEC-v1.yml"             "$base/TQ-002-PRODUCTION-SPEC-v1.md"             "$base/TQ-002-QA-CHECKLIST-v1.yml"             "$base/TQ-002-CAPTIONS-v1.srt"             "$base/TQ-002-DESCRIPTIVE-TRANSCRIPT-v1.md"             "$base/TQ-002-METADATA-v1.yml"             "$base/TQ-002-RIGHTS-PROVENANCE-v1.yml"             "$base/TQ-002-PRODUCTION-RUN-PLAN-v1.md"; do
+            test -f "$f"
+          done
+
+      - name: Enforce production blockers
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'Executive approval: NOT GRANTED' projects/CHANNEL-AUTOMATION/TQ-002-PRODUCTION-RUN-PLAN-v1.md
+          grep -q 'Publishing authorization: NOT GRANTED' projects/CHANNEL-AUTOMATION/TQ-002-PRODUCTION-RUN-PLAN-v1.md
+          grep -q 'authorized: false' projects/CHANNEL-AUTOMATION/TQ-002-METADATA-v1.yml
+          grep -q 'publish_ready: false' projects/CHANNEL-AUTOMATION/TQ-002-RIGHTS-PROVENANCE-v1.yml
+          grep -q 'status: NOT_RUN' projects/CHANNEL-AUTOMATION/TQ-002-QA-CHECKLIST-v1.yml
+
+      - name: Verify captions are structurally present
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(grep -cE '^[0-9]+$' projects/CHANNEL-AUTOMATION/TQ-002-CAPTIONS-v1.srt)" -ge 7
+          grep -q 'الإتاحة تبدأ بسؤال' projects/CHANNEL-AUTOMATION/TQ-002-CAPTIONS-v1.srt
+
+      - name: Verify no third-party production assets are required
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'third_party_footage: prohibited' projects/CHANNEL-AUTOMATION/TQ-002-ASSET-MANIFEST-v1.yml
+          grep -q 'unlicensed_music: prohibited' projects/CHANNEL-AUTOMATION/TQ-002-ASSET-MANIFEST-v1.yml
+
+      - name: Report controlled state
+        run: |
+          echo "TQ002_PRODUCTION_PACKAGE=READY_FOR_CONTROLLED_BUILD"
+          echo "TQ002_QA=NOT_RUN"
+          echo "TQ002_EXECUTIVE_APPROVAL=NOT_GRANTED"
+          echo "TQ002_PUBLISHING=NOT_AUTHORIZED"
+          echo "TQ002_PUBLISH_READY=BLOCKED"
