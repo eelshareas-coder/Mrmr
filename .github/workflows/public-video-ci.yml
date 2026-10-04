@@ -39,11 +39,15 @@ jobs:
             .version == 1 and
             (.candidates | length >= 5) and
             ([.candidates[].topic_id] | unique | length == (.candidates | length)) and
-            all(.candidates[];
-              (.question | length > 10) and
-              (.topic_identity | length > 3) and
-              (.status | IN("DISCOVERED","RESEARCHING","VERIFIED","EXECUTIVE_REVIEW","APPROVED","BLOCKED"))
-            ) and
+            (
+              [.candidates[] |
+                select(
+                  (.question | length > 10) and
+                  (.topic_identity | length > 3) and
+                  (.status | IN("DISCOVERED","RESEARCHING","VERIFIED","EXECUTIVE_REVIEW","APPROVED","BLOCKED"))
+                )
+              ] | length
+            ) == (.candidates | length) and
             .gates.executive_approval == "not granted"
           ' projects/CHANNEL-AUTOMATION/TOPIC-QUEUE-v1.json
       - name: Ensure no secret-like values are committed
