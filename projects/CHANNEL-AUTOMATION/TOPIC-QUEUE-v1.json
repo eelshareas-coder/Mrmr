@@ -152,7 +152,7 @@
   "gates": {
     "diversity": "TQ-002 PASS",
     "verification": "TQ-002 VERIFIED",
-    "executive_approval": "TQ-002 GRANTED"
+    "executive_approval": "not granted"
   },
-  "next_action": "TQ-002 enters SCRIPTING; continue discovery/research for the remaining candidates."
+  "next_action": "TQ-002 is approved at candidate level and may proceed through controlled production; company-level publishing authorization remains not granted. Continue discovery/research for remaining candidates."
 }
