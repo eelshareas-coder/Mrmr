@@ -38,7 +38,7 @@ jobs:
           jq -e '
             .version == 1 and
             (.candidates | length >= 5) and
-            ([.candidates[].topic_id] | unique | length == (.candidates | length)) and
+            ([.candidates[].topic_id] | unique | length) == (.candidates | length) and
             (
               [.candidates[] |
                 select(
