@@ -22,9 +22,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate manifest and report release gate
-        shell: python
+        shell: bash
         run: |
+          python - <<'PY'
           import json
+          import os
           from pathlib import Path
 
           path = Path("projects/TQ-002/episode-manifest.json")
@@ -60,5 +62,6 @@ jobs:
               message = f"BLOCKED — do not publish. Outstanding requirements: {details}"
 
           print(message)
-          summary = Path(__import__("os").environ["GITHUB_STEP_SUMMARY"])
+          summary = Path(os.environ["GITHUB_STEP_SUMMARY"])
           summary.write_text("# TQ-002 Release Gate\n\n" + message + "\n", encoding="utf-8")
+          PY
