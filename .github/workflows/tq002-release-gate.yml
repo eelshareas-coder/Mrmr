@@ -1,0 +1,64 @@
+name: TQ-002 Release Gate (No Publishing)
+
+on:
+  push:
+    paths:
+      - "projects/TQ-002/episode-manifest.json"
+      - ".github/workflows/tq002-release-gate.yml"
+  pull_request:
+    paths:
+      - "projects/TQ-002/episode-manifest.json"
+      - ".github/workflows/tq002-release-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-release-readiness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout production repository
+        uses: actions/checkout@v4
+
+      - name: Validate manifest and report release gate
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          path = Path("projects/TQ-002/episode-manifest.json")
+          if not path.exists():
+              raise SystemExit("ERROR: episode manifest is missing.")
+
+          data = json.loads(path.read_text(encoding="utf-8"))
+          required = [
+              "final_video",
+              "captions_checked",
+              "descriptive_transcript",
+              "rights_provenance_complete",
+              "editorial_accessibility_qa_pass",
+              "technical_qa_pass",
+              "youtube_authorization_verified",
+          ]
+          evidence = data.get("current_evidence", {})
+          missing = [key for key in required if evidence.get(key) is not True]
+          ready = (
+              data.get("status") == "PUBLISH_READY"
+              and data.get("publishable") is True
+              and not missing
+              and data.get("release_gate", {}).get("fail_closed") is True
+          )
+
+          if ready:
+              message = (
+                  "Release-gate evidence is complete. This workflow DOES NOT publish "
+                  "anything; it only reports readiness for a separately authorized publisher."
+              )
+          else:
+              details = ", ".join(missing) if missing else "status/publishable/fail-closed state is not ready"
+              message = f"BLOCKED — do not publish. Outstanding requirements: {details}"
+
+          print(message)
+          summary = Path(__import__("os").environ["GITHUB_STEP_SUMMARY"])
+          summary.write_text("# TQ-002 Release Gate\n\n" + message + "\n", encoding="utf-8")
