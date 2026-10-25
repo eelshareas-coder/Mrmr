@@ -1,0 +1,38 @@
+{
+  "episode_id": "TQ-002",
+  "working_title": "هل الترجمة النصية وحدها تجعل الفيديو متاحًا؟",
+  "status": "DRAFT",
+  "publishable": false,
+  "destination": "YouTube",
+  "publish_mode": "AUTO_ONLY_AFTER_ALL_RELEASE_GATES_PASS",
+  "current_evidence": {
+    "final_video": false,
+    "captions_checked": false,
+    "descriptive_transcript": false,
+    "rights_provenance_complete": false,
+    "editorial_accessibility_qa_pass": false,
+    "technical_qa_pass": false,
+    "youtube_authorization_verified": false
+  },
+  "release_gate": {
+    "required_state": "PUBLISH_READY",
+    "fail_closed": true,
+    "require_all_evidence_true": true,
+    "never_publish_on_missing_evidence": true
+  },
+  "automation": {
+    "cloud_runtime_connected": false,
+    "workflow_deployed": false,
+    "private_test_upload_verified": false
+  },
+  "owner_approval_required_for": [
+    "new paid services or spending",
+    "major channel or strategy changes",
+    "legal, privacy, safeguarding, medical, or reputational exceptions",
+    "first production-to-publishing launch after private test"
+  ],
+  "notes": [
+    "This manifest tracks current evidence only; it does not claim production assets are complete.",
+    "Do not place API keys, passwords, OAuth tokens, or personal data in this file."
+  ]
+}
